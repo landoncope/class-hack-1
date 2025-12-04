@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Training Academy - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #00ff00;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .status {
+            background: #00ff00;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #00ff00;
+        }
+
+        .flag-card {
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.3), rgba(0, 50, 0, 0.8));
+            border-color: #00ff00;
+        }
+
+        .flag-number {
+            font-size: 3rem;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 0 20px #00ff00;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .achievement.locked {
+            opacity: 0.5;
+            background: rgba(100, 100, 100, 0.1);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .mission-list {
+            list-style: none;
+        }
+
+        .mission-list li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 5px;
+            border-left: 4px solid #00ff00;
+        }
+
+        .mission-list li.completed {
+            border-left-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .hint-section {
+            background: rgba(255, 255, 0, 0.1);
+            border: 1px dashed #ffff00;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .hint-section h3 {
+            color: #ffff00;
+            margin-bottom: 10px;
+        }
+
+        .hint-section ul {
+            margin-left: 20px;
+            color: #cccc00;
+        }
+
+        .hint-section li {
+            margin-bottom: 8px;
+        }
+
+        .logout-btn {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            border-radius: 5px;
+        }
+
+        .logout-btn:hover {
+            background: #cc0000;
+        }
+
+        .celebration {
+            text-align: center;
+            font-size: 1.2rem;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s linear infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AGENT DASHBOARD</h1>
+            <div>
+                <span class="status">CLEARANCE: LEVEL 1</span>
+                <button class="logout-btn" onclick="window.location.href='index.html'" style="margin-left: 10px;">LOGOUT</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card flag-card">
+                <h2>FLAG #1 CAPTURED!</h2>
+                <div class="flag-number">1/3</div>
+                <p class="celebration">You found the password in the HTML source code!</p>
+                <p style="margin-top: 15px; color: #aaa;">
+                    This is called "Information Disclosure" - never store passwords in client-side code!
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>REMAINING MISSIONS</h2>
+                <ul class="mission-list">
+                    <li class="completed">
+                        Find the hidden password in the login page
+                    </li>
+                    <li>
+                        Discover the secret page that search engines shouldn't index
+                    </li>
+                    <li>
+                        Find the hidden admin area (What file tells search engines where NOT to go?)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>YOUR ACHIEVEMENTS</h2>
+                <div class="achievement">
+                    <span class="achievement-icon">🔍</span>
+                    <div>
+                        <strong>Source Inspector</strong>
+                        <p style="color: #888; font-size: 0.9rem;">Found password in HTML comments</p>
+                    </div>
+                </div>
+                <div class="achievement locked">
+                    <span class="achievement-icon">🤖</span>
+                    <div>
+                        <strong>Robot Whisperer</strong>
+                        <p style="color: #888; font-size: 0.9rem;">Discovered robots.txt secrets</p>
+                    </div>
+                </div>
+                <div class="achievement locked">
+                    <span class="achievement-icon">👑</span>
+                    <div>
+                        <strong>Secret Agent</strong>
+                        <p style="color: #888; font-size: 0.9rem;">Found all hidden pages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>SECURITY LESSONS</h2>
+                <p style="margin-bottom: 15px;">You just exploited a common vulnerability:</p>
+                <ul style="margin-left: 20px; color: #aaa;">
+                    <li style="margin-bottom: 10px;">
+                        <strong style="color: #00ff00;">HTML Comments</strong> - Developers sometimes leave sensitive info in comments
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong style="color: #00ff00;">Console Logs</strong> - Debug messages often reveal secrets
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong style="color: #00ff00;">Client-Side Validation</strong> - Never trust the browser for security!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hint-section">
+            <h3>NEXT MISSION HINTS:</h3>
+            <ul>
+                <li>Search engines use a special file to know which pages NOT to index...</li>
+                <li>This file is usually in the root directory of a website</li>
+                <li>It's called <code>robots.txt</code> - try visiting it!</li>
+                <li>Sometimes developers put secret pages in there thinking "no one will look"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Console message for students who keep looking
+        console.log("===========================================");
+        console.log("Nice work getting here, agent!");
+        console.log("But there's still more to find...");
+        console.log("Hint: Check the robots.txt file!");
+        console.log("===========================================");
+    </script>
+</body>
+</html>

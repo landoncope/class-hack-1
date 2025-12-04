@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONFIDENTIAL FILES - TOP SECRET</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a4a1a 0%, #0a2a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #00ff00;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.95);
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+
+        .top-secret {
+            background: #ff0000;
+            color: white;
+            padding: 10px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            transform: rotate(-5deg);
+            animation: stamp 0.5s ease-out;
+        }
+
+        @keyframes stamp {
+            0% { transform: rotate(-5deg) scale(3); opacity: 0; }
+            100% { transform: rotate(-5deg) scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .mega-celebration {
+            font-size: 5rem;
+            margin: 30px 0;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .final-flag {
+            background: linear-gradient(45deg, #ffd700, #ffed4a, #ffd700);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .flag-text {
+            font-size: 3rem;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .complete-message {
+            font-size: 1.5rem;
+            color: #000;
+            margin-top: 15px;
+        }
+
+        .certificate {
+            background: #fff;
+            color: #000;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 5px double #ffd700;
+        }
+
+        .certificate h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .certificate p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .skills-learned {
+            background: rgba(0, 255, 0, 0.1);
+            border: 2px solid #00ff00;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .skills-learned h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: #00ff00;
+        }
+
+        .skill-desc {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .next-level {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .next-level h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .next-level p {
+            color: #ddd;
+        }
+
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(720deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti" id="confetti"></div>
+
+    <div class="container">
+        <div class="top-secret">TOP SECRET</div>
+
+        <h1>MISSION COMPLETE!</h1>
+
+        <div class="mega-celebration">
+            🏆🎉🥇🎊🏅
+        </div>
+
+        <div class="final-flag">
+            <div class="flag-text">FLAG #3 CAPTURED!</div>
+            <div class="complete-message">ALL FLAGS FOUND!</div>
+        </div>
+
+        <div class="certificate">
+            <h2>CERTIFICATE OF COMPLETION</h2>
+            <p>This certifies that you have successfully completed the</p>
+            <p><strong style="font-size: 1.5rem;">AGENT TRAINING ACADEMY</strong></p>
+            <p><strong>EASY LEVEL</strong></p>
+            <p style="margin-top: 20px;">You demonstrated skills in:</p>
+            <p>Information Disclosure Detection & Web Reconnaissance</p>
+        </div>
+
+        <div class="skills-learned">
+            <h3>SKILLS UNLOCKED</h3>
+
+            <div class="skill">
+                <span class="skill-icon">🔍</span>
+                <div>
+                    <div class="skill-name">HTML Source Analysis</div>
+                    <div class="skill-desc">Finding sensitive data hidden in HTML comments</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span class="skill-icon">🖥️</span>
+                <div>
+                    <div class="skill-name">Browser DevTools</div>
+                    <div class="skill-desc">Using Developer Tools to inspect web pages</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span class="skill-icon">🤖</span>
+                <div>
+                    <div class="skill-name">Robots.txt Analysis</div>
+                    <div class="skill-desc">Understanding how robots.txt can reveal hidden pages</div>
+                </div>
+            </div>
+
+            <div class="skill">
+                <span class="skill-icon">🔐</span>
+                <div>
+                    <div class="skill-name">Security Awareness</div>
+                    <div class="skill-desc">Recognizing common information disclosure vulnerabilities</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-level">
+            <h3>READY FOR MORE?</h3>
+            <p>You've mastered the basics! The Medium level challenge awaits...</p>
+            <p style="margin-top: 15px;">In the next challenge, you'll learn about:</p>
+            <p style="color: #ffd700;">LocalStorage manipulation, Cookie tampering, and more!</p>
+        </div>
+    </div>
+
+    <script>
+        // Create confetti
+        const confettiContainer = document.getElementById('confetti');
+        const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#00ff00', '#ffd700'];
+
+        for (let i = 0; i < 50; i++) {
+            const piece = document.createElement('div');
+            piece.className = 'confetti-piece';
+            piece.style.left = Math.random() * 100 + '%';
+            piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            piece.style.animationDelay = Math.random() * 3 + 's';
+            piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confettiContainer.appendChild(piece);
+        }
+
+        console.log("===========================================");
+        console.log("🏆 CONGRATULATIONS! ALL FLAGS CAPTURED! 🏆");
+        console.log("===========================================");
+        console.log("You completed the EASY level!");
+        console.log("");
+        console.log("Summary of vulnerabilities found:");
+        console.log("1. Password in HTML comments");
+        console.log("2. Debug info in console.log");
+        console.log("3. Secret pages listed in robots.txt");
+        console.log("");
+        console.log("Ready for the MEDIUM challenge?");
+        console.log("===========================================");
+    </script>
+</body>
+</html>
